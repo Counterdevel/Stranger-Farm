@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class RaycastBuild : MonoBehaviour
 {
     public Transform ObjToMove;
-    public GameObject CercaHor;
-    public GameObject CercaVer;
+    public GameObject cercaHor;
+    public GameObject cercaVer;
+    public GameObject cercaQuina;
     public LayerMask mask;
     int lastPositionX, lastPositionY, lastPositionZ;
     Vector3 mousePos;
@@ -34,11 +35,15 @@ public class RaycastBuild : MonoBehaviour
 
             if(Input.GetMouseButtonDown(0))
             {
-                Instantiate(CercaHor, ObjToMove.position, Quaternion.Euler(-90f, 0f, 0f));
+                Instantiate(cercaHor, ObjToMove.position, Quaternion.Euler(-90f, 0f, 0f));
             }
             if(Input.GetMouseButtonDown(1))
             {
-                Instantiate(CercaHor, ObjToMove.position, Quaternion.Euler(-90f, -90f, 0f));
+                Instantiate(cercaHor, ObjToMove.position, Quaternion.Euler(-90f, -90f, 0f));
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Instantiate(cercaQuina, ObjToMove.position, Quaternion.Euler(-90f, 0f, 0f));
             }
         }
     }
