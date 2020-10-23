@@ -16,14 +16,21 @@ public class RaycastBuild : MonoBehaviour
         }
     }
 
-    public Transform ObjToMove;
+    public List <Transform> ObjToMove;
     public GameObject cerca;
     public GameObject cercaQuina;
     public LayerMask mask;
     int lastPositionX, lastPositionY, lastPositionZ;
     Vector3 mousePos;
 
-    bool cercaRotate = true;
+    bool cercaPadrao = true;
+    bool cercaQuinaPadrao = false;
+
+    bool cercaVer = false;
+    bool cercaQuinaRotate = true;
+    bool cercaQuinaRotate1 = false;
+    bool cercaQuinaRotate2 = false;
+    int rotateCer = 0;
 
     private void Update()
     {
@@ -36,29 +43,46 @@ public class RaycastBuild : MonoBehaviour
             int posX = (int)Mathf.Round(hit.point.x);
             int posZ = (int)Mathf.Round(hit.point.z);
 
-            if (posX != lastPositionX || posZ != lastPositionZ)
+            if (cercaPadrao == true && posX != lastPositionX || cercaPadrao == true && posZ != lastPositionZ)
             {
                 lastPositionX = posX;
                 lastPositionZ = posZ;
-                ObjToMove.position = new Vector3(posX, 0.77f, posZ);
+                ObjToMove[0].position = new Vector3(posX, 0.77f, posZ);
+            }
+            if (cercaQuinaPadrao == true && posX != lastPositionX || cercaQuinaPadrao == true && posZ != lastPositionZ)
+            {
+                lastPositionX = posX;
+                lastPositionZ = posZ;
+                ObjToMove[1].position = new Vector3(posX, 0.77f, posZ);
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Instantiate(cerca, ObjToMove.position, Quaternion.Euler(-90f, 0f, 0f));                  
+                cercaVer = !cercaVer;
+                cercaPadrao = true;
+                cercaQuinaPadrao = false;
             }
 
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetMouseButtonDown(0) && cercaVer == false)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Instantiate(cerca, ObjToMove.position, Quaternion.Euler(-90f, -90f, 0f));
-                }
+                Instantiate(cerca, ObjToMove[0].position, Quaternion.Euler(-90f, 0f, 0f));                  
+            }
+
+            if (Input.GetMouseButtonDown(0) && cercaVer == true)
+            {
+                Instantiate(cerca, ObjToMove[0].position, Quaternion.Euler(-90f, -90f, 0f));
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Instantiate(cercaQuina, ObjToMove.position, Quaternion.Euler(-90f, 0f, 0f));
+                cercaPadrao = false;
+                cercaQuinaPadrao = true;
+                rotateCer -= 90;
+            }
+
+            if (Input.GetMouseButtonDown(0) && cercaQuinaPadrao == true)
+            {
+                Instantiate(cercaQuina, ObjToMove[1].position, Quaternion.Euler(-90f, rotateCer, 0f));
             }
 
         }
