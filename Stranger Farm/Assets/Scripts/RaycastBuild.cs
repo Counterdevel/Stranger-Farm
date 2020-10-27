@@ -27,9 +27,7 @@ public class RaycastBuild : MonoBehaviour
     bool cercaQuinaPadrao = false;
 
     bool cercaVer = false;
-    bool cercaQuinaRotate = true;
-    bool cercaQuinaRotate1 = false;
-    bool cercaQuinaRotate2 = false;
+
     int rotateCer = 0;
 
     private void Update()
@@ -61,6 +59,7 @@ public class RaycastBuild : MonoBehaviour
                 cercaVer = !cercaVer;
                 cercaPadrao = true;
                 cercaQuinaPadrao = false;
+                ObjToMove[1].position = new Vector3(1000f, 0.77f, 1000f);
             }
 
             if (Input.GetMouseButtonDown(0) && cercaVer == false)
@@ -78,6 +77,7 @@ public class RaycastBuild : MonoBehaviour
                 cercaPadrao = false;
                 cercaQuinaPadrao = true;
                 rotateCer -= 90;
+                ObjToMove[0].position = new Vector3(1000f, 0.77f, 1000f);
             }
 
             if (Input.GetMouseButtonDown(0) && cercaQuinaPadrao == true)
