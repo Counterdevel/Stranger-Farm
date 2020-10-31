@@ -18,6 +18,7 @@ public class PlantControl : MonoBehaviour
     public GameObject flor3d;
 
     public GameObject terra;
+    
 
     public string CurrentSeed;
 
@@ -62,27 +63,27 @@ public class PlantControl : MonoBehaviour
             //Destroy(gameObject);
             GetComponent<SpriteRenderer>().sprite = noPlant;
         }
+        if (GameManager.currentToll == "enxada")
+        {
+
+        }
         if ((GameManager.currentToll == "broto") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
-            //Destroy(gameObject);
             GetComponent<SpriteRenderer>().sprite = broto;
             CurrentSeed = "broto";
         }
         if ((GameManager.currentToll == "cenoura") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
-            //Destroy(gameObject);
             GetComponent<SpriteRenderer>().sprite = brotoCenoura;
             CurrentSeed = "cenoura";
         }
         if ((GameManager.currentToll == "batata") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
-            //Destroy(gameObject);
             GetComponent<SpriteRenderer>().sprite = brotoBatata;
             CurrentSeed = "batata";
         }
         if (GameManager.currentToll == "agua")
         {
-            //Destroy(gameObject);
             terra.GetComponent<SpriteRenderer>().color = Color.blue;
             watered = "yes";
         }

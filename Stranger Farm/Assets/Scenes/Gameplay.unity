@@ -2972,6 +2972,82 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999996, z: 0}
   m_Center: {x: 0, y: 0.000000007450581, z: 0.009999998}
+--- !u!1 &291710539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291710540}
+  - component: {fileID: 291710542}
+  - component: {fileID: 291710541}
+  m_Layer: 5
+  m_Name: Ferramenta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &291710540
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291710539}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4750001, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1181165304}
+  - {fileID: 1765522123}
+  m_Father: {fileID: 772007975}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 104.2, y: 26}
+  m_SizeDelta: {x: 49.84796, y: 51.553078}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &291710541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291710539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8784314, g: 0.538509, b: 0.5254902, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &291710542
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291710539}
+  m_CullTransparentMesh: 0
 --- !u!1 &298156727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,10 +3459,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: " 1 - utilize a enxada para fazer um espa\xE7o novo, ou a foice para limpar
-    um espa\xE7o ja preparado\n2 - adicione as sementes desejadas, e em seguida as
-    regue. , \n(se as plantas n\xE3o forem regadas rapidamente, elas ser\xE3o engolidas
-    pelo solo)\n3 - Aguarde as planta\xE7\xF5es nascerem."
+  m_Text: " 1 - utilize  a foice para limpar o espa\xE7o sujo;\n2 - adicione as sementes
+    desejadas, e em seguida as regue. , \n(se as plantas n\xE3o forem regadas rapidamente,
+    elas ser\xE3o engolidas pelo solo)\n3 - Aguarde as planta\xE7\xF5es nascerem.\nobs:
+    enxada em breve..."
 --- !u!222 &327659482
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4164,7 +4240,7 @@ GameObject:
   - component: {fileID: 418566946}
   - component: {fileID: 418566945}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4730,6 +4806,7 @@ MonoBehaviour:
   broto3d: {fileID: 0}
   flor3d: {fileID: 0}
   terra: {fileID: 1318000991}
+  terrainst: {fileID: 0}
   CurrentSeed: 
   growTime: 0
   watered: no
@@ -6933,6 +7010,7 @@ RectTransform:
   - {fileID: 1365911711}
   - {fileID: 1006808393}
   - {fileID: 418566944}
+  - {fileID: 291710540}
   m_Father: {fileID: 504901791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8490,6 +8568,7 @@ MonoBehaviour:
   broto3d: {fileID: 0}
   flor3d: {fileID: 0}
   terra: {fileID: 8022121}
+  terrainst: {fileID: 0}
   CurrentSeed: 
   growTime: 0
   watered: no
@@ -9682,6 +9761,84 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999996, z: 0}
   m_Center: {x: -0.0000000037252903, y: 0, z: 0.009999998}
+--- !u!1 &1181165303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1181165304}
+  - component: {fileID: 1181165306}
+  - component: {fileID: 1181165305}
+  m_Layer: 5
+  m_Name: FerramentaText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1181165304
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181165303}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4040404, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 291710540}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.051986694, y: -39.5}
+  m_SizeDelta: {x: 122.73909, y: 25.94228}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1181165305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181165303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 83fc88120baf90a41871584fdc4a2d14, type: 3}
+    m_FontSize: 22
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Ferramenta
+--- !u!222 &1181165306
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181165303}
+  m_CullTransparentMesh: 0
 --- !u!1 &1186111366
 GameObject:
   m_ObjectHideFlags: 0
@@ -11840,6 +11997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50b1ed1dc8127c4a8155563479c5058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ferramenta: {fileID: 1181165305}
 --- !u!4 &1526301700
 Transform:
   m_ObjectHideFlags: 0
@@ -13468,6 +13626,84 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759495906}
+  m_CullTransparentMesh: 0
+--- !u!1 &1765522122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765522123}
+  - component: {fileID: 1765522125}
+  - component: {fileID: 1765522124}
+  m_Layer: 5
+  m_Name: FerramentaText (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1765522123
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765522122}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4040404, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 291710540}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.051986694, y: 38.810013}
+  m_SizeDelta: {x: 122.73909, y: 25.94228}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1765522124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765522122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 83fc88120baf90a41871584fdc4a2d14, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Ferramenta em m\xE3os"
+--- !u!222 &1765522125
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765522122}
   m_CullTransparentMesh: 0
 --- !u!1 &1769802781
 GameObject:
@@ -15626,6 +15862,7 @@ MonoBehaviour:
   broto3d: {fileID: 0}
   flor3d: {fileID: 0}
   terra: {fileID: 555228732}
+  terrainst: {fileID: 0}
   CurrentSeed: 
   growTime: 0
   watered: no
