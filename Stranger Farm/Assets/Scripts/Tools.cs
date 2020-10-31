@@ -15,6 +15,10 @@ public class Tools : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
+            GameManager.currentToll = "enxada";
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
             GameManager.currentToll = "agua";
         }
         Debug.Log(GameManager.currentToll);

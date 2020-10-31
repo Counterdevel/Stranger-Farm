@@ -6,7 +6,7 @@ public class DayNightController : MonoBehaviour
 {
     public GameObject targetLight;
     public GameObject targetMainCamera;
-    public Material[] skys;
+    //public Material[] skys;
     public float DayTimer;
     public bool isCycle;
     private void Awake()
@@ -38,10 +38,10 @@ public class DayNightController : MonoBehaviour
                 isCycle = false;
             }
         }
-        ChangeCycle();
+        //ChangeCycle();
     }
 
-    void ChangeCycle()
+    /*/void ChangeCycle()
     {
         if (DayTimer >= 0.9f)
         {
@@ -60,4 +60,5 @@ public class DayNightController : MonoBehaviour
             targetMainCamera.GetComponent<Skybox>().material = skys[3];
         }
     }
+    /*/
 }
