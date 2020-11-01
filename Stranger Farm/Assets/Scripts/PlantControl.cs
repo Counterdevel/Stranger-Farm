@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlantControl : MonoBehaviour
 {
     public Sprite noPlant;
+
     public Sprite broto;
     public Sprite flor;
 
@@ -14,8 +17,8 @@ public class PlantControl : MonoBehaviour
     public Sprite cenoura;
     public Sprite brotoCenoura;
 
-    public GameObject broto3d;
-    public GameObject flor3d;
+    //public GameObject broto3d;
+    //public GameObject flor3d;
 
     public GameObject terra;
     
@@ -24,6 +27,9 @@ public class PlantControl : MonoBehaviour
 
     public float growTime = 0;
     public string watered = "no";
+
+    int venda;
+    public Text DinheiroTXT;
 
     void Update()
     {
@@ -42,25 +48,31 @@ public class PlantControl : MonoBehaviour
             if(CurrentSeed == "broto")
             {
                 GetComponent<SpriteRenderer>().sprite = flor;
+                terra.GetComponent<SpriteRenderer>().color = new Color(125, 97, 92);
+
             }
             if (CurrentSeed == "cenoura")
             {
                 GetComponent<SpriteRenderer>().sprite = cenoura;
+                terra.GetComponent<SpriteRenderer>().color = new Color(125, 97, 92);
             }
             if (CurrentSeed == "batata")
             {
                 GetComponent<SpriteRenderer>().sprite = batata;
+                terra.GetComponent<SpriteRenderer>().color = new Color(125, 97, 92);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Venda();
         }
 
 
     }
     private void OnMouseDown()
     {
-        //Debug.Log("sai fora tio clica em mim nao");
         if(GameManager.currentToll == "foice")
         {
-            //Destroy(gameObject);
             GetComponent<SpriteRenderer>().sprite = noPlant;
         }
         if (GameManager.currentToll == "enxada")
@@ -84,8 +96,33 @@ public class PlantControl : MonoBehaviour
         }
         if (GameManager.currentToll == "agua")
         {
-            terra.GetComponent<SpriteRenderer>().color = Color.blue;
+            terra.GetComponent<SpriteRenderer>().color = new Color(121, 161, 255);
             watered = "yes";
         }
+    }
+
+    void Venda()
+    {
+        if(GetComponent<SpriteRenderer>().sprite == brotoCenoura)
+        {
+            AddPoint(5);
+            GetComponent<SpriteRenderer>().sprite = noPlant;
+        }
+        if (GetComponent<SpriteRenderer>().sprite == broto)
+        {
+            AddPoint(2);
+            GetComponent<SpriteRenderer>().sprite = noPlant;
+        }
+        if (GetComponent<SpriteRenderer>().sprite == brotoBatata)
+        {
+            AddPoint(4);
+            GetComponent<SpriteRenderer>().sprite = noPlant;
+        }
+    }
+
+    void AddPoint(int value)
+    {
+        venda += value;
+        DinheiroTXT.text = venda.ToString();
     }
 }
