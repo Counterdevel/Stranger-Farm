@@ -17,19 +17,13 @@ public class PlantControl : MonoBehaviour
     public Sprite cenoura;
     public Sprite brotoCenoura;
 
-    //public GameObject broto3d;
-    //public GameObject flor3d;
-
     public GameObject terra;
     
-
     public string CurrentSeed;
 
     public float growTime = 0;
     public string watered = "no";
 
-    int venda;
-    public Text DinheiroTXT;
 
     void Update()
     {
@@ -37,36 +31,36 @@ public class PlantControl : MonoBehaviour
         {
             growTime += Time.deltaTime;
         }
-       if((growTime > 5) && (watered == "no"))
+       if((growTime > 4) && (watered == "no"))
         {
             CurrentSeed = "";
             growTime = 0;
             GetComponent<SpriteRenderer>().sprite = noPlant;
         }
-        if ((growTime > 5) && (watered == "yes"))
+        if ((growTime > 6) && (watered == "yes"))
         {
             if(CurrentSeed == "broto")
             {
                 GetComponent<SpriteRenderer>().sprite = flor;
-                terra.GetComponent<SpriteRenderer>().color = new Color(125, 97, 92);
-
+                terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92,255);
             }
+        }
+        if ((growTime > 12) && (watered == "yes"))
+        {
             if (CurrentSeed == "cenoura")
             {
                 GetComponent<SpriteRenderer>().sprite = cenoura;
-                terra.GetComponent<SpriteRenderer>().color = new Color(125, 97, 92);
+                terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
             }
+        }
+        if ((growTime > 9) && (watered == "yes"))
+        {
             if (CurrentSeed == "batata")
             {
                 GetComponent<SpriteRenderer>().sprite = batata;
-                terra.GetComponent<SpriteRenderer>().color = new Color(125, 97, 92);
+                terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Venda();
-        }
-
 
     }
     private void OnMouseDown()
@@ -75,54 +69,66 @@ public class PlantControl : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = noPlant;
         }
+        if ((GameManager.currentToll == "foice") && (CurrentSeed == "broto"))
+        {
+            GameManager.Instance.AddPoint(2);
+            CurrentSeed = "";
+            GetComponent<SpriteRenderer>().sprite = noPlant;
+            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+            growTime = 0;
+            watered = "no";
+}
+        if ((GameManager.currentToll == "foice") && (CurrentSeed == "batata"))
+        {
+            GameManager.Instance.AddPoint(4);
+            CurrentSeed = "";
+            GetComponent<SpriteRenderer>().sprite = noPlant;
+            terra.GetComponent<SpriteRenderer>().color = new Color32(125,97,92,255);
+            growTime = 0;
+            watered = "no";
+        }
+        if ((GameManager.currentToll == "foice") && (CurrentSeed == "cenoura"))
+        {
+            GameManager.Instance.AddPoint(6);
+            CurrentSeed = "";
+            GetComponent<SpriteRenderer>().sprite = noPlant;
+            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+            growTime = 0;
+            watered = "no";
+        }
+
+
         if (GameManager.currentToll == "enxada")
         {
 
         }
+
+
         if ((GameManager.currentToll == "broto") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
             GetComponent<SpriteRenderer>().sprite = broto;
             CurrentSeed = "broto";
         }
+
+
         if ((GameManager.currentToll == "cenoura") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
             GetComponent<SpriteRenderer>().sprite = brotoCenoura;
             CurrentSeed = "cenoura";
         }
+
+
         if ((GameManager.currentToll == "batata") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
             GetComponent<SpriteRenderer>().sprite = brotoBatata;
             CurrentSeed = "batata";
         }
+
+
         if (GameManager.currentToll == "agua")
         {
-            terra.GetComponent<SpriteRenderer>().color = new Color(121, 161, 255);
+            terra.GetComponent<SpriteRenderer>().color = new Color32(37,112,214,255);
             watered = "yes";
         }
-    }
-
-    void Venda()
-    {
-        if(GetComponent<SpriteRenderer>().sprite == brotoCenoura)
-        {
-            AddPoint(5);
-            GetComponent<SpriteRenderer>().sprite = noPlant;
-        }
-        if (GetComponent<SpriteRenderer>().sprite == broto)
-        {
-            AddPoint(2);
-            GetComponent<SpriteRenderer>().sprite = noPlant;
-        }
-        if (GetComponent<SpriteRenderer>().sprite == brotoBatata)
-        {
-            AddPoint(4);
-            GetComponent<SpriteRenderer>().sprite = noPlant;
-        }
-    }
-
-    void AddPoint(int value)
-    {
-        venda += value;
-        DinheiroTXT.text = venda.ToString();
     }
 }
