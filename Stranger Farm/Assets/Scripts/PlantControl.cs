@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,9 @@ public class PlantControl : MonoBehaviour
 
     public Sprite cenoura;
     public Sprite brotoCenoura;
+
+    //public Vector3 posicao, rotacao;
+    //public GameObject broto3d;
 
     public GameObject terra;
     
@@ -37,11 +41,12 @@ public class PlantControl : MonoBehaviour
             growTime = 0;
             GetComponent<SpriteRenderer>().sprite = noPlant;
         }
-        if ((growTime > 6) && (watered == "yes"))
+        if ((growTime > 4) && (watered == "yes"))
         {
             if(CurrentSeed == "broto")
             {
                 GetComponent<SpriteRenderer>().sprite = flor;
+                //Instantiate(broto3d, terra.transform.position, terra.transform.rotation);
                 terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92,255);
             }
         }
@@ -61,7 +66,6 @@ public class PlantControl : MonoBehaviour
                 terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
             }
         }
-
     }
     private void OnMouseDown()
     {
@@ -96,35 +100,25 @@ public class PlantControl : MonoBehaviour
             growTime = 0;
             watered = "no";
         }
-
-
         if (GameManager.currentToll == "enxada")
         {
 
         }
-
-
         if ((GameManager.currentToll == "broto") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
             GetComponent<SpriteRenderer>().sprite = broto;
             CurrentSeed = "broto";
         }
-
-
         if ((GameManager.currentToll == "cenoura") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
             GetComponent<SpriteRenderer>().sprite = brotoCenoura;
             CurrentSeed = "cenoura";
         }
-
-
         if ((GameManager.currentToll == "batata") && (GetComponent<SpriteRenderer>().sprite == noPlant))
         {
             GetComponent<SpriteRenderer>().sprite = brotoBatata;
             CurrentSeed = "batata";
         }
-
-
         if (GameManager.currentToll == "agua")
         {
             terra.GetComponent<SpriteRenderer>().color = new Color32(37,112,214,255);
