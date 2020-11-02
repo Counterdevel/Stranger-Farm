@@ -18,6 +18,8 @@ public class PlantControl : MonoBehaviour
     public Sprite brotoCenoura;
 
     public GameObject terra;
+
+    public GameObject broto3d;
     
     public string CurrentSeed;
 
@@ -42,6 +44,7 @@ public class PlantControl : MonoBehaviour
             if(CurrentSeed == "broto")
             {
                 GetComponent<SpriteRenderer>().sprite = flor;
+                //Instantiate(broto3d, terra.transform.position, terra.transform.rotation);
                 terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92,255);
             }
         }

@@ -288,13 +288,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8022121}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -380.50507, y: -202.36833, z: 4.665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1089367879}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &13377929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,6 +4806,7 @@ MonoBehaviour:
   cenoura: {fileID: 21300000, guid: aa7a3820884d1ee48a044a92de3ff1e9, type: 3}
   brotoCenoura: {fileID: 21300000, guid: fd7dbd4394fd0a5488282e3c2b7d942e, type: 3}
   terra: {fileID: 1318000991}
+  broto3d: {fileID: 5913030038189024691}
   CurrentSeed: 
   growTime: 0
   watered: no
@@ -5502,13 +5503,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555228732}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -380.50507, y: -202.36833, z: 2.595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1089367879}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &605253069
 GameObject:
   m_ObjectHideFlags: 0
@@ -8597,6 +8598,7 @@ MonoBehaviour:
   cenoura: {fileID: 21300000, guid: aa7a3820884d1ee48a044a92de3ff1e9, type: 3}
   brotoCenoura: {fileID: 21300000, guid: fd7dbd4394fd0a5488282e3c2b7d942e, type: 3}
   terra: {fileID: 8022121}
+  broto3d: {fileID: 5913030038189024691}
   CurrentSeed: 
   growTime: 0
   watered: no
@@ -10452,13 +10454,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318000991}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -380.50507, y: -202.36833, z: 3.635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1089367879}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1325503168
 GameObject:
   m_ObjectHideFlags: 0
@@ -14903,6 +14905,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astronauta
       objectReference: {fileID: 0}
+    - target: {fileID: 4431670454091400558, guid: a43357d991f01224a8eb33cfede47c86,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -1134714066672644336, guid: a43357d991f01224a8eb33cfede47c86,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a43357d991f01224a8eb33cfede47c86, type: 3}
 --- !u!4 &1967927602 stripped
@@ -16072,6 +16080,7 @@ MonoBehaviour:
   cenoura: {fileID: 21300000, guid: aa7a3820884d1ee48a044a92de3ff1e9, type: 3}
   brotoCenoura: {fileID: 21300000, guid: fd7dbd4394fd0a5488282e3c2b7d942e, type: 3}
   terra: {fileID: 555228732}
+  broto3d: {fileID: 5913030038189024691}
   CurrentSeed: 
   growTime: 0
   watered: no
