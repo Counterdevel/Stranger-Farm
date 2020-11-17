@@ -6,9 +6,11 @@ public class DayNightController : MonoBehaviour
 {
     public GameObject targetLight;
     public GameObject targetMainCamera;
-    //public Material[] skys;
+
     public float DayTimer;
-    public bool isCycle;
+    public bool isCycle = false;
+
+    public static string horario;
     private void Awake()
     {
         targetLight = GameObject.FindGameObjectWithTag("Light");
@@ -22,43 +24,24 @@ public class DayNightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isCycle)
+        if (Calendario.hour >= 18 && Calendario.hour <= 22)
         {
             targetLight.GetComponent<Light>().intensity = DayTimer -= Time.deltaTime * 0.1f;
-            if(DayTimer <= 0)
+            targetLight.GetComponent<Light>().color = new Color32(43, 37, 152, 255);
+            if (DayTimer <= 0.5)
             {
                 isCycle = true;
             }
         }
-        else if (isCycle)
+        else if (Calendario.hour >= 5 && Calendario.hour <= 6 && isCycle == true)
         {
-            targetLight.GetComponent<Light>().intensity = DayTimer += Time.deltaTime * 0.3f;
-            if (DayTimer >= 1)
+            targetLight.GetComponent<Light>().intensity = DayTimer += Time.deltaTime * 0.4f;
+            targetLight.GetComponent<Light>().color = new Color32(255,244,214,255);
+            if(DayTimer >= 1)
             {
                 isCycle = false;
             }
         }
-        //ChangeCycle();
+        
     }
-
-    /*/void ChangeCycle()
-    {
-        if (DayTimer >= 0.9f)
-        {
-            targetMainCamera.GetComponent<Skybox>().material = skys[0];
-        }
-        else if (DayTimer >= 0.5f)
-        {
-            targetMainCamera.GetComponent<Skybox>().material = skys[1];
-        }
-        else if (DayTimer >= 0.3f)
-        {
-            targetMainCamera.GetComponent<Skybox>().material = skys[2];
-        }
-        else if (DayTimer >= 0.1f)
-        {
-            targetMainCamera.GetComponent<Skybox>().material = skys[3];
-        }
-    }
-    /*/
 }

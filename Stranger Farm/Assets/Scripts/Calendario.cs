@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Calendario : MonoBehaviour
 {
-    private const int TIMESCALE = 1800; //1 second = 30 minute
+    private const int TIMESCALE = 3600; //1 second = 30 minute
 
     public Text ClockText;
     public Text DayText;
