@@ -19,15 +19,15 @@ public class InventarioSementes : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Alpha4))
         {
-            GameManager.currentToll = "broto";
+            GameManager.currentToll = "semente1";
         }
         if (Input.GetKey(KeyCode.Alpha5))
         {
-            GameManager.currentToll = "cenoura";
+            GameManager.currentToll = "semente2";
         }
         if (Input.GetKey(KeyCode.Alpha6))
         {
-            GameManager.currentToll = "batata";
+            GameManager.currentToll = "semente3";
         }
     }
 }
