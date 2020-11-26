@@ -20,14 +20,20 @@ public class InventarioSementes : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha4))
         {
             GameManager.currentToll = "semente1";
+            GameManager.Instance.DesativaSelects();
+            GameManager.Instance.Select3.enabled = true;
         }
         if (Input.GetKey(KeyCode.Alpha5))
         {
             GameManager.currentToll = "semente2";
+            GameManager.Instance.DesativaSelects();
+            GameManager.Instance.Select4.enabled = true;
         }
         if (Input.GetKey(KeyCode.Alpha6))
         {
             GameManager.currentToll = "semente3";
+            GameManager.Instance.DesativaSelects();
+            GameManager.Instance.Select5.enabled = true;
         }
     }
 }

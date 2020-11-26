@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -12,7 +13,12 @@ public class GameManager : MonoBehaviour
     public static int SementesDeBatata;
     public static int SementesDeCenoura;
 
-    public Text Ferramenta;
+    public Image Select;
+    public Image Select1;
+    public Image Select2;
+    public Image Select3;
+    public Image Select4;
+    public Image Select5;
 
     int venda = 0;
     public Text DinheiroTXT;
@@ -26,17 +32,14 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-
-    }
-    private void Update()
-    {
-        Ferramenta.text = currentToll;
+        DesativaSelects();
     }
     public void AddPoint(int value)
     {
         venda += value;
         DinheiroTXT.text = venda.ToString();
     }
+
 
     public void EnergyLost(int energiaGasta)
     {
@@ -48,5 +51,15 @@ public class GameManager : MonoBehaviour
     {
         energia = recharge;
         energiaPorcentagem.text = energia.ToString();
+    }
+    public void DesativaSelects()
+    {
+        Select.enabled  = false;
+        Select1.enabled = false;
+        Select2.enabled = false;
+        Select3.enabled = false;
+        Select4.enabled = false;
+        Select5.enabled = false;
+
     }
 }

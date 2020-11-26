@@ -13,6 +13,7 @@ public class Dorme : MonoBehaviour
             {
                 Calendario.Instance.Dormir(08, true);
                 GameManager.Instance.RechargedEnergy(100);
+                DayNightController.DayTimer = 1;
             }
         }
     }

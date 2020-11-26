@@ -12,14 +12,20 @@ public class Tools : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1))
         {
             GameManager.currentToll = "foice";
+            GameManager.Instance.DesativaSelects();
+            GameManager.Instance.Select.enabled = true;
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
             GameManager.currentToll = "enxada";
+            GameManager.Instance.DesativaSelects();
+            GameManager.Instance.Select1.enabled = true;
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
             GameManager.currentToll = "agua";
+            GameManager.Instance.DesativaSelects();
+            GameManager.Instance.Select2.enabled = true;
         }
         Debug.Log(GameManager.currentToll);
     }

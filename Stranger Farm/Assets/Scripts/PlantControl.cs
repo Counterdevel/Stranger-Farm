@@ -127,15 +127,22 @@ public class PlantControl : MonoBehaviour
             break;
 
                 case "agua":
-                    if(chão == true) { 
-                        terra.GetComponent<SpriteRenderer>().color = new Color32(37, 112, 214, 255);
-                        watered = "yes";
-                        GameManager.Instance.EnergyLost(1);
+
+                if (chão == true)
+                {
+                    terra.GetComponent<SpriteRenderer>().color = new Color32(37, 112, 214, 255);
+                    watered = "yes";
+                    GameManager.Instance.EnergyLost(1);
+                }
+                if (chão == true) 
+                    { 
+                    terra.GetComponent<SpriteRenderer>().color = new Color32(37, 112, 214, 255);
+                    watered = "yes";
                     }
                     break;
 
                 case "enxada":
-                    if(chão == true)
+                if (chão == true)
                     { 
                         terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
                         GetComponent<SpriteRenderer>().color = new Color32(159, 74, 20, 255);
@@ -146,7 +153,7 @@ public class PlantControl : MonoBehaviour
             break;
 
                 case "semente1":
-                    if(chão == true) 
+                if (chão == true) 
                     { 
                         if (GetComponent<SpriteRenderer>().sprite == noPlant)
                         {
@@ -158,7 +165,7 @@ public class PlantControl : MonoBehaviour
             break;
 
                 case "semente2":
-                    if (GetComponent<SpriteRenderer>().sprite == noPlant)
+                if (GetComponent<SpriteRenderer>().sprite == noPlant)
                     {
                         GetComponent<SpriteRenderer>().sprite = semente;
                         CurrentSeed = "semente2";
@@ -167,7 +174,7 @@ public class PlantControl : MonoBehaviour
                     break;
 
                 case "semente3":
-                    if (GetComponent<SpriteRenderer>().sprite == noPlant)
+                if (GetComponent<SpriteRenderer>().sprite == noPlant)
                     {
                         GetComponent<SpriteRenderer>().sprite = semente;
                         CurrentSeed = "semente3";
