@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     int venda = 0;
     public Text DinheiroTXT;
 
+    int energia = 100;
+    public Text energiaPorcentagem;
+
     private void Awake()
     {
         if (!Instance)
@@ -31,12 +34,24 @@ public class GameManager : MonoBehaviour
         }
         DesativaSelects();
     }
-     public void AddPoint(int value)
+    public void AddPoint(int value)
     {
         venda += value;
         DinheiroTXT.text = venda.ToString();
     }
 
+
+    public void EnergyLost(int energiaGasta)
+    {
+        energia -= energiaGasta;
+        energiaPorcentagem.text = energia.ToString();
+    }
+
+    public void RechargedEnergy(int recharge)
+    {
+        energia = recharge;
+        energiaPorcentagem.text = energia.ToString();
+    }
     public void DesativaSelects()
     {
         Select.enabled  = false;
@@ -45,5 +60,6 @@ public class GameManager : MonoBehaviour
         Select3.enabled = false;
         Select4.enabled = false;
         Select5.enabled = false;
+
     }
 }
