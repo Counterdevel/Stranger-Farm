@@ -7,7 +7,7 @@ public class DayNightController : MonoBehaviour
     public GameObject targetLight;
     public GameObject targetMainCamera;
 
-    public static float DayTimer;
+    public float DayTimer;
     public bool isCycle = false;
 
     public static string horario;
@@ -33,7 +33,7 @@ public class DayNightController : MonoBehaviour
                 isCycle = true;
             }
         }
-        else if (Calendario.hour >= 8 && Calendario.hour <= 9 && isCycle == true)
+        else if (Calendario.hour >= 5 && Calendario.hour <= 6 && isCycle == true)
         {
             targetLight.GetComponent<Light>().intensity = DayTimer += Time.deltaTime * 0.4f;
             targetLight.GetComponent<Light>().color = new Color32(255,244,214,255);
