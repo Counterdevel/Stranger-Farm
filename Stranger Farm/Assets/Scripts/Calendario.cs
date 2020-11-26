@@ -5,6 +5,16 @@ using UnityEngine.UI;
 
 public class Calendario : MonoBehaviour
 {
+    public static Calendario Instance;
+    private void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+        }
+
+    }
+
     private const int TIMESCALE = 3600; //1 second = 30 minute
 
     public Text ClockText;
@@ -26,6 +36,12 @@ public class Calendario : MonoBehaviour
     {
         CalculateTime();
         CalculateSeason();
+
+        if(hour == 03)
+        {
+            hour = 08;
+            GameManager.Instance.RechargedEnergy(50);
+        }
     }
 
     void TextCallFunction()
@@ -118,6 +134,15 @@ public class Calendario : MonoBehaviour
             year++;
             TextCallFunction();
             CalculateSeason();
+        }
+    }
+
+    public void Dormir(double wakeMeUp, bool dormiu = false)
+    {
+        if (dormiu == true)
+        {
+            hour = wakeMeUp;
+            dormiu = false;
         }
     }
 }

@@ -77,46 +77,50 @@ public class PlantControl : MonoBehaviour
                 { 
                     if(sujo == true && verde == false)
                     {
-                    GetComponent<SpriteRenderer>().sprite = noPlant;
-                    sujo = false;
+                        GetComponent<SpriteRenderer>().sprite = noPlant;
+                        sujo = false;
+                        GameManager.Instance.EnergyLost(2);
                     }
                         if(CurrentSeed == "semente1")
                         {
                             if(madura == true)
                             {
-                            GameManager.Instance.AddPoint(2);
-                            CurrentSeed = "";
-                            GetComponent<SpriteRenderer>().sprite = noPlant;
-                            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
-                            growTime = 0;
-                            madura = false;
-                            watered = "no";
+                                GameManager.Instance.AddPoint(2);
+                                GameManager.Instance.EnergyLost(1);
+                                CurrentSeed = "";
+                                GetComponent<SpriteRenderer>().sprite = noPlant;
+                                terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                                growTime = 0;
+                                madura = false;
+                                watered = "no";
                             }
                         }
                     if(CurrentSeed == "semente2")
                     {
                         if (madura == true)
                         {
-                        GameManager.Instance.AddPoint(4);
-                        CurrentSeed = "";
-                        GetComponent<SpriteRenderer>().sprite = noPlant;
-                        terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
-                        growTime = 0;
-                        madura = false;
-                        watered = "no";
+                            GameManager.Instance.AddPoint(4);
+                            GameManager.Instance.EnergyLost(1);
+                            CurrentSeed = "";
+                            GetComponent<SpriteRenderer>().sprite = noPlant;
+                            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                            growTime = 0;
+                            madura = false;
+                            watered = "no";
                         }
                     }
                         if (CurrentSeed == "semente3")
                         {
                         if (madura == true)
                         {
-                        GameManager.Instance.AddPoint(6);
-                        CurrentSeed = "";
-                        GetComponent<SpriteRenderer>().sprite = noPlant;
-                        terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
-                        growTime = 0;
-                        madura = false;
-                        watered = "no";
+                            GameManager.Instance.AddPoint(6);
+                            GameManager.Instance.EnergyLost(1);
+                            CurrentSeed = "";
+                            GetComponent<SpriteRenderer>().sprite = noPlant;
+                            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                            growTime = 0;
+                            madura = false;
+                            watered = "no";
                         }
                  }
                 }
@@ -124,18 +128,20 @@ public class PlantControl : MonoBehaviour
 
                 case "agua":
                     if(chão == true) { 
-                    terra.GetComponent<SpriteRenderer>().color = new Color32(37, 112, 214, 255);
-                    watered = "yes";
+                        terra.GetComponent<SpriteRenderer>().color = new Color32(37, 112, 214, 255);
+                        watered = "yes";
+                        GameManager.Instance.EnergyLost(1);
                     }
                     break;
 
                 case "enxada":
                     if(chão == true)
                     { 
-                    terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
-                    GetComponent<SpriteRenderer>().color = new Color32(159, 74, 20, 255);
-                    sujo = true;
-                    verde = false;
+                        terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                        GetComponent<SpriteRenderer>().color = new Color32(159, 74, 20, 255);
+                        GameManager.Instance.EnergyLost(3);
+                        sujo = true;
+                        verde = false;
                     }
             break;
 
@@ -144,9 +150,10 @@ public class PlantControl : MonoBehaviour
                     { 
                         if (GetComponent<SpriteRenderer>().sprite == noPlant)
                         {
-                        GetComponent<SpriteRenderer>().sprite = semente;
-                        CurrentSeed = "semente1";
-                        }
+                            GetComponent<SpriteRenderer>().sprite = semente;
+                            CurrentSeed = "semente1";
+                            GameManager.Instance.EnergyLost(1);
+                    }
                     }
             break;
 
@@ -155,6 +162,7 @@ public class PlantControl : MonoBehaviour
                     {
                         GetComponent<SpriteRenderer>().sprite = semente;
                         CurrentSeed = "semente2";
+                        GameManager.Instance.EnergyLost(1);
                     }
                     break;
 
@@ -163,7 +171,8 @@ public class PlantControl : MonoBehaviour
                     {
                         GetComponent<SpriteRenderer>().sprite = semente;
                         CurrentSeed = "semente3";
-                    }
+                        GameManager.Instance.EnergyLost(1);
+                }
                     break;
         }
     }
