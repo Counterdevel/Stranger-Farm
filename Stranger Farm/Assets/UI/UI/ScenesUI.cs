@@ -8,6 +8,18 @@ public class ScenesUI : MonoBehaviour
 
     string NomeDaCena;
     public string nomeCena;
+    public GameObject PanelOpcoes;
+    public GameObject PanelCreditos;
+    public GameObject PanelInicial;
+    public GameObject ButtonBack;
+
+    private void Awake()
+    {
+        PanelOpcoes.SetActive(false);
+        PanelCreditos.SetActive(false);
+        PanelInicial.SetActive(true);
+        ButtonBack.SetActive(false);
+    }
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -35,5 +47,27 @@ public class ScenesUI : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Opcoes()
+    {
+        PanelOpcoes.SetActive(true);
+        PanelCreditos.SetActive(false);
+        PanelInicial.SetActive(false);
+        ButtonBack.SetActive(true);
+    }
+    public void Creditos()
+    {
+        PanelOpcoes.SetActive(false);
+        PanelCreditos.SetActive(true);
+        PanelInicial.SetActive(false);
+        ButtonBack.SetActive(true);
+    }
+    public void Voltar()
+    {
+        PanelOpcoes.SetActive(false);
+        PanelCreditos.SetActive(false);
+        PanelInicial.SetActive(true);
+        ButtonBack.SetActive(false);
     }
 }
