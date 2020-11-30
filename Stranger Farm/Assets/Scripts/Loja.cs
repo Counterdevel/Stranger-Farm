@@ -11,6 +11,10 @@ public class Loja : MonoBehaviour
     public GameObject BotaoFerramentas;
     public GameObject BotaoSementes;
 
+    public GameObject BotaoComprarS1;
+    public GameObject BotaoComprarS2;
+    public GameObject BotaoComprarS3;
+
     public void ComprarSemente()
     {
         PanelSementes.SetActive(true);
@@ -34,6 +38,18 @@ public class Loja : MonoBehaviour
         BotaoFerramentas.SetActive(true);
         BotaoSementes.SetActive(true);
     }
+
+    public void ComprouSemente1()
+    {
+        float carteira = GameManager.venda;
+        carteira -= 0.50f;
+        GameManager.Instance.RemovePoint(carteira);
+        if(carteira < 0.50f)
+        {
+            print("Dinheiro insuficiente!");
+        }
+    }
+
     public void FecharLoja()
     {
         this.gameObject.SetActive(false);

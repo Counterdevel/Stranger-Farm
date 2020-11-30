@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public Image Select4;
     public Image Select5;
 
-    int venda = 0;
+    public static float venda = 0;
     public Text DinheiroTXT;
 
     int energia = 100;
@@ -34,12 +34,17 @@ public class GameManager : MonoBehaviour
         }
         DesativaSelects();
     }
-    public void AddPoint(int value)
+    public void AddPoint(float value)
     {
         venda += value;
         DinheiroTXT.text = venda.ToString();
     }
 
+    public void RemovePoint(float value)
+    {
+        venda -= value;
+        DinheiroTXT.text = venda.ToString();
+    }
 
     public void EnergyLost(int energiaGasta)
     {
