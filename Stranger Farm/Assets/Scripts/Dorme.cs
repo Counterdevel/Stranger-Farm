@@ -12,6 +12,7 @@ public class Dorme : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Calendario.Instance.Dormir(08, true);
+                Calendario.day++;
                 GameManager.Instance.RechargedEnergy(100);
                 DayNightController.DayTimer = 1;
             }

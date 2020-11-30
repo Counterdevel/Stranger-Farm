@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using BitCodeSaveSystem;
 
 public class PlantControl : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class PlantControl : MonoBehaviour
     bool madura = false;
     bool sujo = false;
     bool verde = false;
-    bool chão = false;
+    public bool chão = false;
     void Update()
     {
        if(CurrentSeed != "")
@@ -184,11 +185,19 @@ public class PlantControl : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             chão = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            chão = false;
         }
     }
 }
