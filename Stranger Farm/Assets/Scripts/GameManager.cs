@@ -9,10 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public static string currentToll = "nenhuma";
 
-    public static int SementesDeBroto;
-    public static int SementesDeBatata;
-    public static int SementesDeCenoura;
-
     public Image Select;
     public Image Select1;
     public Image Select2;
@@ -20,11 +16,20 @@ public class GameManager : MonoBehaviour
     public Image Select4;
     public Image Select5;
 
-    public static float venda = 0;
+    public float venda = 0;
     public Text DinheiroTXT;
 
     int energia = 100;
     public Text energiaPorcentagem;
+
+    public int sementesRestantes = 3;
+    public Text sementesDisponiveis;
+
+    public int sementesRestantes2 = 0;
+    public Text sementesDisponiveis2;
+
+    public int sementesRestantes3 = 0;
+    public Text sementesDisponiveis3;
 
     private void Awake()
     {
@@ -33,6 +38,14 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DesativaSelects();
+    }
+
+    private void Update()
+    {
+        Loja.carteira = venda;
+        sementesDisponiveis.text = sementesRestantes.ToString();
+        sementesDisponiveis2.text = sementesRestantes2.ToString();
+        sementesDisponiveis3.text = sementesRestantes3.ToString();
     }
     public void AddPoint(float value)
     {
@@ -57,6 +70,25 @@ public class GameManager : MonoBehaviour
         energia = recharge;
         energiaPorcentagem.text = energia.ToString();
     }
+
+    public void Plantado(int plantou)
+    {
+        sementesRestantes -= plantou;
+        sementesDisponiveis.text = sementesRestantes.ToString();
+    }
+
+    public void Plantado2(int plantou)
+    {
+        sementesRestantes2 -= plantou;
+        sementesDisponiveis2.text = sementesRestantes2.ToString();
+    }
+
+    public void Plantado3(int plantou)
+    {
+        sementesRestantes3 -= plantou;
+        sementesDisponiveis3.text = sementesRestantes3.ToString();
+    }
+
     public void DesativaSelects()
     {
         Select.enabled  = false;

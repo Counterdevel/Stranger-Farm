@@ -10,9 +10,9 @@ public class InventarioSementes : MonoBehaviour
     public Text SementesDeCenoura;
     void Start()
     {
-        SementesDeBroto.text = "";// + GameManager.SementesDeBroto;
-        SementesDeBatata.text = ""; //+ GameManager.SementesDeBatata;
-        SementesDeCenoura.text = "";// + GameManager.SementesDeCenoura;
+        SementesDeBroto.text = "" + GameManager.Instance.sementesRestantes;
+        SementesDeBatata.text = "" + GameManager.Instance.sementesRestantes2;
+        SementesDeCenoura.text = "" + GameManager.Instance.sementesRestantes3;
     }
 
     private void Update()

@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class AstronautaMovement : MonoBehaviour
 {
+    Animator animator;
+
     public CharacterController controller;
 
     public float speed = 5f;
 
     public float turnsSmoothTime = 0.1f;
     float turnSmoothVelocity;
+
+    AudioSource steps;
+    AudioClip step;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -26,6 +36,10 @@ public class AstronautaMovement : MonoBehaviour
 
             controller.Move(direction * speed * Time.deltaTime);
         }
+
+        animator.SetFloat("Speed", controller.velocity.magnitude);
+
+
     }
 }
  

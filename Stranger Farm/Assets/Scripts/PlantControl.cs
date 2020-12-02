@@ -187,17 +187,18 @@ public class PlantControl : MonoBehaviour
                 case "semente1":
                 if (chão == true) 
                     { 
-                        if (GetComponent<SpriteRenderer>().sprite == noPlant)
+                        if (GetComponent<SpriteRenderer>().sprite == noPlant && GameManager.Instance.sementesRestantes > 0)
                         {
                             GetComponent<SpriteRenderer>().sprite = semente;
                             CurrentSeed = "semente1";
+                            GameManager.Instance.Plantado(1);
                             GameManager.Instance.EnergyLost(1);
                         }
                     }
             break;
 
                 case "semente2":
-                if (GetComponent<SpriteRenderer>().sprite == noPlant)
+                if (GetComponent<SpriteRenderer>().sprite == noPlant && GameManager.Instance.sementesRestantes2 > 0)
                     {
                         GetComponent<SpriteRenderer>().sprite = semente2;
                         CurrentSeed = "semente2";
@@ -206,7 +207,7 @@ public class PlantControl : MonoBehaviour
                     break;
 
                 case "semente3":
-                if (GetComponent<SpriteRenderer>().sprite == noPlant)
+                if (GetComponent<SpriteRenderer>().sprite == noPlant && GameManager.Instance.sementesRestantes3 > 0)
                     {
                         GetComponent<SpriteRenderer>().sprite = semente3;
                         CurrentSeed = "semente3";
