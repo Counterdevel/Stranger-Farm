@@ -117,7 +117,7 @@ MonoBehaviour:
     type: 3}
   frutof1: {fileID: -6397001334740486526, guid: 723fae266e2175141b135cf2e5320aab,
     type: 3}
-  Frutof2: {fileID: 6359450432808131917, guid: 723fae266e2175141b135cf2e5320aab, type: 3}
+  frutof2: {fileID: 6359450432808131917, guid: 723fae266e2175141b135cf2e5320aab, type: 3}
   frutof3: {fileID: 7119360920479355019, guid: 723fae266e2175141b135cf2e5320aab, type: 3}
   semente2: {fileID: -1619720695578308026, guid: 723fae266e2175141b135cf2e5320aab,
     type: 3}
