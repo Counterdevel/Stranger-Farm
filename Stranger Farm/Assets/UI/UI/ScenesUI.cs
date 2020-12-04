@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using BitCodeSaveSystem;
+
 
 public class ScenesUI : MonoBehaviour
 {
-    string fileName = "save";
     string NomeDaCena;
     public string nomeCena;
     public GameObject PanelOpcoes;
     public GameObject PanelCreditos;
     public GameObject PanelInicial;
-    public GameObject PanelGameplay;
     public GameObject ButtonBack;
 
     private void Awake()
@@ -21,7 +19,6 @@ public class ScenesUI : MonoBehaviour
         PanelCreditos.SetActive(false);
         PanelInicial.SetActive(true);
         ButtonBack.SetActive(false);
-        PanelGameplay.SetActive(false);
     }
     void Start()
     {
@@ -58,22 +55,12 @@ public class ScenesUI : MonoBehaviour
         PanelCreditos.SetActive(false);
         PanelInicial.SetActive(false);
         ButtonBack.SetActive(true);
-        PanelGameplay.SetActive(false);
     }
     public void Creditos()
     {
         PanelOpcoes.SetActive(false);
         PanelCreditos.SetActive(true);
         PanelInicial.SetActive(false);
-        ButtonBack.SetActive(true);
-        PanelGameplay.SetActive(false);
-    }
-    public void Gameplay()
-    {
-        PanelOpcoes.SetActive(false);
-        PanelCreditos.SetActive(false);
-        PanelInicial.SetActive(false);
-        PanelGameplay.SetActive(true);
         ButtonBack.SetActive(true);
     }
     public void Voltar()
@@ -82,16 +69,7 @@ public class ScenesUI : MonoBehaviour
         PanelCreditos.SetActive(false);
         PanelInicial.SetActive(true);
         ButtonBack.SetActive(false);
-        PanelGameplay.SetActive(false);
+
     }
 
-    public void Save()
-    {
-        SaveLoadMenager.Save(fileName);
-    }
-
-    public void Load()
-    {
-        SaveLoadMenager.Load(fileName);
-    } 
 }

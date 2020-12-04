@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using BitCodeSaveSystem;
 
 public class Calendario : MonoBehaviour
 {
@@ -23,7 +22,6 @@ public class Calendario : MonoBehaviour
     public Text SeasonText;
     public Text YearText;
 
-    [Save]
     public static double minute, hour, day, second, month, year;
     void Start()
     {

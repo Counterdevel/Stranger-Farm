@@ -12,7 +12,7 @@ public class Dorme : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             pressione.SetActive(true);
-            print("Dormiu");
+            //print("Dormiu");
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Calendario.Instance.Dormir(08, true);

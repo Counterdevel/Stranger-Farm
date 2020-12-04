@@ -27,7 +27,6 @@ public class Tools : MonoBehaviour
             GameManager.Instance.DesativaSelects();
             GameManager.Instance.Select2.enabled = true;
         }
-        Debug.Log(GameManager.currentToll);
     }
 
 
