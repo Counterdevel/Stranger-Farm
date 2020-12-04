@@ -198,21 +198,23 @@ public class PlantControl : MonoBehaviour
             break;
 
                 case "semente2":
-                if (GetComponent<SpriteRenderer>().sprite == noPlant && GameManager.Instance.sementesRestantes2 > 0)
+                    if (GetComponent<SpriteRenderer>().sprite == noPlant && GameManager.Instance.sementesRestantes2 > 0)
                     {
                         GetComponent<SpriteRenderer>().sprite = semente2;
                         CurrentSeed = "semente2";
+                        GameManager.Instance.Plantado2(1);
                         GameManager.Instance.EnergyLost(1);
                     }
                     break;
 
                 case "semente3":
-                if (GetComponent<SpriteRenderer>().sprite == noPlant && GameManager.Instance.sementesRestantes3 > 0)
+                    if (GetComponent<SpriteRenderer>().sprite == noPlant && GameManager.Instance.sementesRestantes3 > 0)
                     {
                         GetComponent<SpriteRenderer>().sprite = semente3;
                         CurrentSeed = "semente3";
+                        GameManager.Instance.Plantado3(1);
                         GameManager.Instance.EnergyLost(1);
-                }
+                    }
                     break;
         }
     }

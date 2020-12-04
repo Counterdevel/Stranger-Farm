@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (venda == 0 && sementesRestantes == 0 && sementesRestantes2 == 0 && sementesRestantes3 == 0 && Calendario.hour == 02)
+        if (venda == 0 && sementesRestantes == 0 && sementesRestantes2 == 0 && sementesRestantes3 == 0 && Calendario.hour == 02 || energia == 0)
         {
             gameover.SetActive(true);
         }
