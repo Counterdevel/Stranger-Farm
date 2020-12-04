@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public float venda = 0;
     public Text DinheiroTXT;
 
-    int energia = 100;
+    public int energia = 100;
     public Text energiaPorcentagem;
 
     public int sementesRestantes = 3;
@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     public int sementesRestantes3 = 0;
     public Text sementesDisponiveis3;
+
+    public GameObject gameover;
 
     private void Awake()
     {
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         sementesDisponiveis.text = sementesRestantes.ToString();
         sementesDisponiveis2.text = sementesRestantes2.ToString();
         sementesDisponiveis3.text = sementesRestantes3.ToString();
+        GameOver();
     }
     public void AddPoint(float value)
     {
@@ -100,4 +103,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void GameOver()
+    {
+        if (venda == 0 && sementesRestantes == 0 && sementesRestantes2 == 0 && sementesRestantes3 == 0 && Calendario.hour == 02)
+        {
+            gameover.SetActive(true);
+        }
+    }
 }

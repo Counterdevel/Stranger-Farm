@@ -37,11 +37,16 @@ public class Calendario : MonoBehaviour
         CalculateTime();
         CalculateSeason();
 
-        if(hour == 03)
+        if(hour == 03 && GameManager.Instance.energia >= 50)
         {
             hour = 08;
             GameManager.Instance.RechargedEnergy(50);
         }
+        else if (hour == 03 && GameManager.Instance.energia <= 50)
+        {
+            hour = 08;
+        }
+
     }
 
     void TextCallFunction()

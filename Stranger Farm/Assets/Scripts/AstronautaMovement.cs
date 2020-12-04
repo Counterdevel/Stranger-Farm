@@ -13,8 +13,8 @@ public class AstronautaMovement : MonoBehaviour
     public float turnsSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
-    AudioSource steps;
-    AudioClip step;
+    //AudioSource steps;
+    //AudioClip step;
 
     private void Start()
     {
@@ -38,8 +38,6 @@ public class AstronautaMovement : MonoBehaviour
         }
 
         animator.SetFloat("Speed", controller.velocity.magnitude);
-
-
     }
 }
  
