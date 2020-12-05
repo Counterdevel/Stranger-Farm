@@ -43,7 +43,7 @@ public class Loja : MonoBehaviour
 
     public void ComprouSemente1()
     {
-        if (GameManager.Instance.venda > 0.50f)
+        if (GameManager.Instance.venda >= 0.50f)
         {
             carteira -= 0.50f;
             GameManager.Instance.RemovePoint(0.50f);
