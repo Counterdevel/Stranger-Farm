@@ -119,6 +119,8 @@ MonoBehaviour:
     type: 3}
   frutof2: {fileID: 6359450432808131917, guid: 723fae266e2175141b135cf2e5320aab, type: 3}
   frutof3: {fileID: 7119360920479355019, guid: 723fae266e2175141b135cf2e5320aab, type: 3}
+  frutopodre: {fileID: -9186677031450183618, guid: 723fae266e2175141b135cf2e5320aab,
+    type: 3}
   semente2: {fileID: -1619720695578308026, guid: 723fae266e2175141b135cf2e5320aab,
     type: 3}
   fruto2f1: {fileID: 7096653010146914409, guid: 723fae266e2175141b135cf2e5320aab,
@@ -127,6 +129,8 @@ MonoBehaviour:
     type: 3}
   fruto2f3: {fileID: 2259525880584345884, guid: 723fae266e2175141b135cf2e5320aab,
     type: 3}
+  fruto2podre: {fileID: -6058837603663656509, guid: 723fae266e2175141b135cf2e5320aab,
+    type: 3}
   semente3: {fileID: 5112040000671910095, guid: 723fae266e2175141b135cf2e5320aab,
     type: 3}
   fruto3f1: {fileID: -513217556106114533, guid: 723fae266e2175141b135cf2e5320aab,
@@ -134,6 +138,8 @@ MonoBehaviour:
   fruto3f2: {fileID: 1041493089131304994, guid: 723fae266e2175141b135cf2e5320aab,
     type: 3}
   fruto3f3: {fileID: 47523744574776142, guid: 723fae266e2175141b135cf2e5320aab, type: 3}
+  fruto3podre: {fileID: 7752789288456697583, guid: 723fae266e2175141b135cf2e5320aab,
+    type: 3}
   "ch\xE3o": 0
 --- !u!1 &5735121658715390127
 GameObject:

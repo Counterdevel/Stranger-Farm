@@ -10,6 +10,7 @@ public class PlantControl : MonoBehaviour
     public string CurrentSeed;
     public string watered = "no";
     public float growTime = 0;
+    public static bool temsementenochao;
 
 
     public Sprite noPlant;
@@ -19,16 +20,19 @@ public class PlantControl : MonoBehaviour
     public Sprite frutof1;
     public Sprite frutof2;
     public Sprite frutof3;
+    public Sprite frutopodre;
 
     public Sprite semente2;
     public Sprite fruto2f1;
     public Sprite fruto2f2;
     public Sprite fruto2f3;
+    public Sprite fruto2podre;
 
     public Sprite semente3;
     public Sprite fruto3f1;
     public Sprite fruto3f2;
     public Sprite fruto3f3;
+    public Sprite fruto3podre;
 
     Vector3 pos;
     Quaternion rot;
@@ -36,6 +40,7 @@ public class PlantControl : MonoBehaviour
     bool madura = false;
     bool sujo = false;
     bool verde = false;
+    bool estapodre;
     public bool chão = false;
 
     private void Start()
@@ -54,6 +59,7 @@ public class PlantControl : MonoBehaviour
             CurrentSeed = "";
             growTime = 0;
             GetComponent<SpriteRenderer>().sprite = noPlant;
+            temsementenochao = false;
         }
         if ((growTime > 6) && (watered == "yes"))
         {
@@ -71,6 +77,12 @@ public class PlantControl : MonoBehaviour
                     {
                         GetComponent<SpriteRenderer>().sprite = frutof3;
                         madura = true;
+                    }
+                    if(growTime > 20)
+                    {
+                        GetComponent<SpriteRenderer>().sprite = frutopodre;
+                        madura = false;
+                        estapodre = true;
                     }
                 }
             }
@@ -92,6 +104,12 @@ public class PlantControl : MonoBehaviour
                         GetComponent<SpriteRenderer>().sprite = fruto2f3;
                         madura = true;
                     }
+                    if (growTime > 37)
+                    {
+                        GetComponent<SpriteRenderer>().sprite = fruto2podre;
+                        madura = false;
+                        estapodre = true;
+                    }
                 }
             }
         }
@@ -111,6 +129,12 @@ public class PlantControl : MonoBehaviour
                     {
                         GetComponent<SpriteRenderer>().sprite = fruto3f3;
                         madura = true;
+                    }
+                    if (growTime > 46)
+                    {
+                        GetComponent<SpriteRenderer>().sprite = fruto3podre;
+                        madura = false;
+                        estapodre = true;
                     }
                 }
             }
@@ -144,8 +168,23 @@ public class PlantControl : MonoBehaviour
                                 growTime = 0;
                                 madura = false;
                                 watered = "no";
+                            temsementenochao = false;
                             }
+                        if (madura == false && estapodre == true)
+                        {
+                            GameManager.Instance.AddPoint(0);
+                            GameManager.Instance.EnergyLost(1);
+                            CurrentSeed = "";
+                            GetComponent<SpriteRenderer>().sprite = noPlant;
+                            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                            transform.position = pos;
+                            transform.rotation = rot;
+                            growTime = 0;
+                            madura = false;
+                            watered = "no";
+                            temsementenochao = false;
                         }
+                    }
                     if(CurrentSeed == "semente2")
                     {
                         if (madura == true)
@@ -160,6 +199,21 @@ public class PlantControl : MonoBehaviour
                             growTime = 0;
                             madura = false;
                             watered = "no";
+                            temsementenochao = false;
+                        }
+                        if (madura == false && estapodre == true)
+                        {
+                            GameManager.Instance.AddPoint(0);
+                            GameManager.Instance.EnergyLost(1);
+                            CurrentSeed = "";
+                            GetComponent<SpriteRenderer>().sprite = noPlant;
+                            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                            transform.position = pos;
+                            transform.rotation = rot;
+                            growTime = 0;
+                            madura = false;
+                            watered = "no";
+                            temsementenochao = false;
                         }
                     }
                         if (CurrentSeed == "semente3")
@@ -176,8 +230,23 @@ public class PlantControl : MonoBehaviour
                             growTime = 0;
                             madura = false;
                             watered = "no";
+                            temsementenochao = false;
                         }
-                 }
+                        if (madura == false && estapodre == true)
+                        {
+                            GameManager.Instance.AddPoint(0);
+                            GameManager.Instance.EnergyLost(1);
+                            CurrentSeed = "";
+                            GetComponent<SpriteRenderer>().sprite = noPlant;
+                            terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                            transform.position = pos;
+                            transform.rotation = rot;
+                            growTime = 0;
+                            madura = false;
+                            watered = "no";
+                            temsementenochao = false;
+                        }
+                    }
                 }
             break;
 
@@ -215,6 +284,7 @@ public class PlantControl : MonoBehaviour
                             GetComponent<SpriteRenderer>().sprite = semente;
                             CurrentSeed = "semente1";
                             GameManager.Instance.Plantado(1);
+                            temsementenochao = true;
                             GameManager.Instance.EnergyLost(1);
                         }
                     }
@@ -226,6 +296,7 @@ public class PlantControl : MonoBehaviour
                         GetComponent<SpriteRenderer>().sprite = semente2;
                         CurrentSeed = "semente2";
                         GameManager.Instance.Plantado2(1);
+                        temsementenochao = true;
                         GameManager.Instance.EnergyLost(1);
                     }
                     break;
@@ -236,6 +307,7 @@ public class PlantControl : MonoBehaviour
                         GetComponent<SpriteRenderer>().sprite = semente3;
                         CurrentSeed = "semente3";
                         GameManager.Instance.Plantado3(1);
+                        temsementenochao = true;
                         GameManager.Instance.EnergyLost(1);
                     }
                     break;
