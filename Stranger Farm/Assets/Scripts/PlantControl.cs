@@ -11,6 +11,7 @@ public class PlantControl : MonoBehaviour
     public string watered = "no";
     public float growTime = 0;
 
+
     public Sprite noPlant;
     public GameObject terra;
 
@@ -29,12 +30,19 @@ public class PlantControl : MonoBehaviour
     public Sprite fruto3f2;
     public Sprite fruto3f3;
 
+    Vector3 pos;
+    Quaternion rot;
+
     bool madura = false;
     bool sujo = false;
     bool verde = false;
     public bool chão = false;
 
-
+    private void Start()
+    {
+        pos = transform.position;
+        rot = transform.rotation;
+    }
     void Update()
     {
        if(CurrentSeed != "")
@@ -53,7 +61,10 @@ public class PlantControl : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().sprite = frutof1;
                 terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92,255);
-                if(growTime > 8)
+                transform.eulerAngles = new Vector3(0, 90, 0);
+                transform.localPosition = new Vector3(0, 0, 0.6f);
+                GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+                if (growTime > 8)
                 {
                     GetComponent<SpriteRenderer>().sprite = frutof2;
                     if(growTime > 10)
@@ -70,6 +81,9 @@ public class PlantControl : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().sprite = fruto2f1;
                 terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                transform.eulerAngles = new Vector3(0, 90, 0);
+                transform.localPosition = new Vector3(0, 0, 0.6f);
+                GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
                 if (growTime > 18)
                 {
                     GetComponent<SpriteRenderer>().sprite = fruto2f2;
@@ -87,6 +101,9 @@ public class PlantControl : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().sprite = fruto3f1;
                 terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                transform.eulerAngles = new Vector3(0, 90, 0);
+                transform.localPosition = new Vector3(0, 0, 0.6f);
+
                 if (growTime > 24)
                 {
                     GetComponent<SpriteRenderer>().sprite = fruto3f2;
@@ -122,6 +139,8 @@ public class PlantControl : MonoBehaviour
                                 CurrentSeed = "";
                                 GetComponent<SpriteRenderer>().sprite = noPlant;
                                 terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                                transform.position = pos;
+                                transform.rotation = rot;
                                 growTime = 0;
                                 madura = false;
                                 watered = "no";
@@ -136,6 +155,8 @@ public class PlantControl : MonoBehaviour
                             CurrentSeed = "";
                             GetComponent<SpriteRenderer>().sprite = noPlant;
                             terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                            transform.position = pos;
+                            transform.rotation = rot;
                             growTime = 0;
                             madura = false;
                             watered = "no";
@@ -150,6 +171,8 @@ public class PlantControl : MonoBehaviour
                             CurrentSeed = "";
                             GetComponent<SpriteRenderer>().sprite = noPlant;
                             terra.GetComponent<SpriteRenderer>().color = new Color32(125, 97, 92, 255);
+                            transform.position = pos;
+                            transform.rotation = rot;
                             growTime = 0;
                             madura = false;
                             watered = "no";

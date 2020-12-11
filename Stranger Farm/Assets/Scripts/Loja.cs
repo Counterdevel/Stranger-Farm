@@ -72,10 +72,10 @@ public class Loja : MonoBehaviour
 
     public void PassagemBarco()
     {
-        if (GameManager.Instance.venda > 500f)
+        if (GameManager.Instance.venda >= 100f)
         {
-            carteira -= 500f;
-            GameManager.Instance.RemovePoint(500f);
+            carteira -= 100f;
+            GameManager.Instance.RemovePoint(100f);
         }
     }
 
